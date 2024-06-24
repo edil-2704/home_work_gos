@@ -25,14 +25,7 @@ class MainScreen extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           children: [
-            const Text(
-              'У кого сегодня день рождения',
-              style: TextStyle(
-                color: Color(0xff3B81EA),
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+            
             const SizedBox(height: 15),
             SizedBox(
               width: 300,
@@ -46,6 +39,15 @@ class MainScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            const Text(
+              'У кого сегодня день рождения',
+              style: TextStyle(
+                color: Color(0xff3B81EA),
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
               ),
             ),
             const SizedBox(height: 15),
