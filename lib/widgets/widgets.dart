@@ -61,6 +61,7 @@ class CommonNameCard extends StatelessWidget {
       width: 300,
       height: 300,
       child: ListView.separated(
+        shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: birhtdayList.length,
         itemBuilder: (context, index) {
@@ -90,9 +91,11 @@ class CommonNameCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         birhtdayList[index].name,
+                        maxLines: 2,
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ),
@@ -121,3 +124,4 @@ class CommonNameCard extends StatelessWidget {
     );
   }
 }
+
