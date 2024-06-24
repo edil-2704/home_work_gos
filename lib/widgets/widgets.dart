@@ -70,9 +70,7 @@ class CommonNameCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => InfoScreen(
-                    todayBirthdayModels: birhtdayList[index],
-                  ),
+                  builder: (context) => InfoScreen(userModel: birhtdayList[index]),
                 ),
               );
             },

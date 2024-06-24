@@ -67,7 +67,7 @@ class MainScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => InfoScreen(
-                            todayBirthdayModels: birhtdayList[index],
+                           userModel: birhtdayList[index],
                           ),
                         ),
                       );
@@ -107,7 +107,7 @@ class MainScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => InfoScreen(
-                            todayBirthdayModels: birhtdayList[index],
+                          userModel: birhtdayList[index],
                           ),
                         ),
                       );

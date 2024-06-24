@@ -5,11 +5,11 @@ import 'package:home_work_gos/widgets/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class InfoScreen extends StatelessWidget {
-  final UserModel todayBirthdayModels;
+  final UserModel userModel;
 
   const InfoScreen({
     super.key,
-    required this.todayBirthdayModels,
+    required this.userModel,
   });
 
   @override
@@ -23,12 +23,9 @@ class InfoScreen extends StatelessWidget {
           },
         ),
       ),
-      body: ListView.separated(
-        physics: const NeverScrollableScrollPhysics(),
-        // itemCount: birhtdayList.length,
-        itemCount: 1,
-        itemBuilder: (context, index) {
-          return Center(
+      body: Column(
+        children: [
+          Center(
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -46,7 +43,7 @@ class InfoScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(75),
                           ),
                           child: Image.asset(
-                            birhtdayList[index].imageUrl,
+                           userModel.imageUrl,
                           ),
                         ),
                         const SizedBox(height: 15),
@@ -55,7 +52,7 @@ class InfoScreen extends StatelessWidget {
                           width: 300,
                           child: Expanded(
                             child: Text(
-                              birhtdayList[index].name,
+                              userModel.name,
                               style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
@@ -65,7 +62,7 @@ class InfoScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 15),
                         Text(
-                          birhtdayList[index].position ?? '',
+                       userModel.position ?? '',
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
@@ -85,7 +82,7 @@ class InfoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    birhtdayList[index].deployment ?? '',
+                   userModel.deployment ?? '',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -100,7 +97,7 @@ class InfoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    birhtdayList[index].department ?? '',
+                   userModel.department ?? '',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -115,7 +112,7 @@ class InfoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    birhtdayList[index].email ?? '',
+                   userModel.email ?? '',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -130,7 +127,7 @@ class InfoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    birhtdayList[index].birhtday ?? '',
+                   userModel.birhtday ?? '',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -138,6 +135,7 @@ class InfoScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   InkWell(
+                    splashFactory: NoSplash.splashFactory,
                     onTap: () {
                       showModalBottomSheet(
                         context: context,
@@ -166,25 +164,24 @@ class InfoScreen extends StatelessWidget {
                                   ],
                                 ),
                                 const SizedBox(height: 10),
-                                Text(birhtdayList[index].name),
+                                Text(userModel.name),
                                 const SizedBox(height: 40),
                                 CommonListTile(
                                   subtitle:
-                                      birhtdayList[index].phoneNumber ?? '-',
-                                      title: 'Телефон основной',
+                                      userModel.phoneNumber ?? '-',
+                                  title: 'Телефон основной',
                                 ),
                                 const SizedBox(height: 20),
                                 CommonListTile(
                                   subtitle:
-                                      birhtdayList[index].phoneNumber ?? '-',
-                                      title: 'Телефон рабочий',
+                                     userModel.phoneNumber ?? '-',
+                                  title: 'Телефон рабочий',
                                 ),
-
                                 const SizedBox(height: 20),
                                 CommonListTile(
                                   subtitle:
-                                      birhtdayList[index].phoneNumber ?? '-',
-                                      title: 'Телефон WhatsApp',
+                                     userModel.phoneNumber ?? '-',
+                                  title: 'Телефон WhatsApp',
                                 ),
                               ],
                             ),
@@ -205,7 +202,7 @@ class InfoScreen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              birhtdayList[index].phoneNumber ?? '',
+                             userModel.phoneNumber ?? '',
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
@@ -217,8 +214,8 @@ class InfoScreen extends StatelessWidget {
                         IconButton(
                           onPressed: () async {
                             await FlutterPhoneDirectCaller.callNumber(
-                                birhtdayList[index].phoneNumber ?? '');
-                            launch(birhtdayList[index].phoneNumber ?? '');
+                               userModel.phoneNumber ?? '');
+                            launch(userModel.phoneNumber ?? '');
                           },
                           icon: const Icon(
                             Icons.phone_outlined,
@@ -232,11 +229,8 @@ class InfoScreen extends StatelessWidget {
                 ],
               ),
             ),
-          );
-        },
-        separatorBuilder: (context, index) {
-          return const Divider(height: 25);
-        },
+          ),
+        ],
       ),
     );
   }
