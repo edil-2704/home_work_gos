@@ -17,6 +17,7 @@ class MainScreen extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
+        centerTitle: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
