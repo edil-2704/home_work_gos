@@ -34,6 +34,7 @@ class CommonListTile extends StatelessWidget {
           ],
         ),
         IconButton(
+          highlightColor: Colors.transparent,
           onPressed: () async {
             await FlutterPhoneDirectCaller.callNumber('-');
             launch('+9965858585855');
@@ -70,7 +71,8 @@ class CommonNameCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => InfoScreen(userModel: birhtdayList[index]),
+                  builder: (context) =>
+                      InfoScreen(userModel: birhtdayList[index]),
                 ),
               );
             },

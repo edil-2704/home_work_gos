@@ -25,7 +25,6 @@ class MainScreen extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           children: [
-            
             const SizedBox(height: 15),
             SizedBox(
               width: 300,
@@ -59,6 +58,8 @@ class MainScreen extends StatelessWidget {
                 itemCount: birhtdayList.length,
                 itemBuilder: (context, index) {
                   return InkWell(
+                    highlightColor: Colors.transparent,
+                    splashFactory: NoSplash.splashFactory,
                     child: CircleAvatar(
                       radius: 60,
                       backgroundColor: Colors.amber,
@@ -70,7 +71,7 @@ class MainScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => InfoScreen(
-                           userModel: birhtdayList[index],
+                            userModel: birhtdayList[index],
                           ),
                         ),
                       );
@@ -99,6 +100,8 @@ class MainScreen extends StatelessWidget {
                 itemCount: tomorrowBirhtdayList.length,
                 itemBuilder: (context, index) {
                   return InkWell(
+                    highlightColor: Colors.transparent,
+                    splashFactory: NoSplash.splashFactory,
                     child: CircleAvatar(
                       radius: 60,
                       backgroundColor: Colors.amber,
@@ -110,7 +113,7 @@ class MainScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => InfoScreen(
-                          userModel: birhtdayList[index],
+                            userModel: birhtdayList[index],
                           ),
                         ),
                       );

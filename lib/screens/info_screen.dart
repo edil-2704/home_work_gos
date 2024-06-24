@@ -43,7 +43,7 @@ class InfoScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(75),
                           ),
                           child: Image.asset(
-                           userModel.imageUrl,
+                            userModel.imageUrl,
                           ),
                         ),
                         const SizedBox(height: 15),
@@ -62,7 +62,7 @@ class InfoScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 15),
                         Text(
-                       userModel.position ?? '',
+                          userModel.position ?? '',
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
@@ -82,7 +82,7 @@ class InfoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                   userModel.deployment ?? '',
+                    userModel.deployment ?? '',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -97,7 +97,7 @@ class InfoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                   userModel.department ?? '',
+                    userModel.department ?? '',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -112,7 +112,7 @@ class InfoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                   userModel.email ?? '',
+                    userModel.email ?? '',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -127,7 +127,7 @@ class InfoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                   userModel.birhtday ?? '',
+                    userModel.birhtday ?? '',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -167,20 +167,17 @@ class InfoScreen extends StatelessWidget {
                                 Text(userModel.name),
                                 const SizedBox(height: 40),
                                 CommonListTile(
-                                  subtitle:
-                                      userModel.phoneNumber ?? '-',
+                                  subtitle: userModel.phoneNumber ?? '-',
                                   title: 'Телефон основной',
                                 ),
                                 const SizedBox(height: 20),
                                 CommonListTile(
-                                  subtitle:
-                                     userModel.phoneNumber ?? '-',
+                                  subtitle: userModel.phoneNumber ?? '-',
                                   title: 'Телефон рабочий',
                                 ),
                                 const SizedBox(height: 20),
                                 CommonListTile(
-                                  subtitle:
-                                     userModel.phoneNumber ?? '-',
+                                  subtitle: userModel.phoneNumber ?? '-',
                                   title: 'Телефон WhatsApp',
                                 ),
                               ],
@@ -202,7 +199,7 @@ class InfoScreen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                             userModel.phoneNumber ?? '',
+                              userModel.phoneNumber ?? '',
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
@@ -212,9 +209,10 @@ class InfoScreen extends StatelessWidget {
                         ),
                         const Spacer(),
                         IconButton(
+                          highlightColor: Colors.transparent,
                           onPressed: () async {
                             await FlutterPhoneDirectCaller.callNumber(
-                               userModel.phoneNumber ?? '');
+                                userModel.phoneNumber ?? '');
                             launch(userModel.phoneNumber ?? '');
                           },
                           icon: const Icon(
